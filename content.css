@@ -1,0 +1,117 @@
+/* 选品采集插件样式 - content.css (v1.0.2 极限制空防隐藏版) */
+
+.product-collector-btn {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  z-index: 2147483647 !important; /* 最高层级，绝不被任何视频遮罩盖住 */
+  background: #ff2442 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffffff !important;
+  padding: 4px 12px !important;
+  font-size: 12px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  border-radius: 20px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.15s ease, background 0.15s ease !important;
+  opacity: 0.96 !important;
+  user-select: none !important;
+  pointer-events: auto !important;
+}
+
+.product-collector-btn:hover {
+  opacity: 1 !important;
+  background: #e01c38 !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 18px rgba(255, 36, 66, 0.55) !important;
+}
+
+.product-collector-btn:active {
+  transform: scale(0.96) !important;
+}
+
+/* 已采集状态 */
+.product-collector-btn.is-collected {
+  background: #10b981 !important; /* 翠绿成功色 */
+  border-color: #ffffff !important;
+  opacity: 0.95 !important;
+  cursor: default !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* 页面左下角常驻状态指示胶囊 */
+.product-collector-status-pill {
+  position: fixed !important;
+  bottom: 24px !important;
+  left: 24px !important;
+  z-index: 2147483647 !important;
+  background: rgba(18, 18, 18, 0.92) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 20px !important;
+  padding: 6px 14px !important;
+  font-size: 12px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45) !important;
+  user-select: none !important;
+}
+
+.status-dot {
+  width: 8px !important;
+  height: 8px !important;
+  background: #10b981 !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  box-shadow: 0 0 8px #10b981 !important;
+}
+
+.rescan-link {
+  color: #60a5fa !important;
+  text-decoration: underline !important;
+  cursor: pointer !important;
+  margin-left: 4px !important;
+}
+
+.rescan-link:hover {
+  color: #93c5fd !important;
+}
+
+/* 全局轻提示 Toast */
+.product-collector-toast {
+  position: fixed !important;
+  top: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-20px) !important;
+  background: rgba(20, 20, 20, 0.95) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  padding: 10px 22px !important;
+  border-radius: 30px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.product-collector-toast.show {
+  transform: translateX(-50%) translateY(0) !important;
+  opacity: 1 !important;
+}

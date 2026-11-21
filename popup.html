@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>选品清单</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <span class="logo">📌</span>
+      <span class="title">选品清单</span>
+      <span class="badge" id="countBadge">0</span>
+    </div>
+    <div class="header-right">
+      <button id="clearBtn" class="btn btn-text text-danger" title="清空选品库">清空</button>
+    </div>
+  </div>
+  <div class="filter-tabs">
+    <button class="tab-btn active" data-filter="all">全部 (<span id="countAll">0</span>)</button>
+    <button class="tab-btn" data-filter="xiaohongshu">小红书 (<span id="countXhs">0</span>)</button>
+    <button class="tab-btn" data-filter="taobao">淘宝 (<span id="countTb">0</span>)</button>
+  </div>
+  <div class="actions-grid">
+    <button id="copyUrlsBtn" class="btn btn-primary" title="复制纯URL">📋 复制纯 URL</button>
+    <button id="exportJsonBtn" class="btn btn-secondary" title="导出JSON">📦 导出 JSON</button>
+    <button id="exportCsvBtn" class="btn btn-secondary" title="导出CSV">📊 导出 CSV</button>
+  </div>
+  <div class="webhook-section">
+    <div class="webhook-row">
+      <input type="text" id="webhookInput" placeholder="Agent Webhook URL" />
+      <button id="sendWebhookBtn" class="btn btn-action" title="推送至下游Agent">🚀 推送</button>
+    </div>
+    <div id="webhookStatus" class="webhook-status"></div>
+  </div>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="搜索已选品标题或链接..." />
+  </div>
+  <div class="product-list" id="productList"></div>
+  <div class="footer">
+    <span>💡 保留选品审美，交给 Agent 自动化上架</span>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

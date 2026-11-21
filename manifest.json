@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "小红书 & RedNote & 淘宝选品采集助手",
+  "version": "1.0.3",
+  "description": "一键采集小红书(RedNote)笔记和淘宝商品，自动生成规范化URL列表对接下游Codex或Agent",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "*://*.xiaohongshu.com/*",
+    "*://xiaohongshu.com/*",
+    "*://*.rednote.com/*",
+    "*://rednote.com/*",
+    "*://*.taobao.com/*",
+    "*://taobao.com/*",
+    "*://*.tmall.com/*",
+    "*://tmall.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.xiaohongshu.com/*",
+        "*://xiaohongshu.com/*",
+        "*://*.rednote.com/*",
+        "*://rednote.com/*",
+        "*://*.taobao.com/*",
+        "*://taobao.com/*",
+        "*://*.tmall.com/*",
+        "*://tmall.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "选品库",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}
